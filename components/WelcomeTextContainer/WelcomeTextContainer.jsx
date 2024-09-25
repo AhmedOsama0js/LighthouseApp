@@ -26,7 +26,7 @@ export default function WelcomeTextContainer() {
     >
       <Text style={styles.mainText}>Find your home lighting</Text>
       <Text style={styles.subText}>
-        text good function rely ahned osama awad elsaeed awad
+        Lighthouse offers modern, stylish lighting fixtures to enhance any space
       </Text>
     </Animated.View>
   );
@@ -38,14 +38,12 @@ const styles = StyleSheet.create({
     padding: SIZES.small,
     marginVertical: SIZES.xLarge + 6,
     paddingTop: 40,
-    
   },
   mainText: {
     fontWeight: "700",
     fontSize: SIZES.xLarge + 6,
     textAlign: "center",
     color: COLOR.mainColor,
-    
   },
   subText: {
     textAlign: "center",

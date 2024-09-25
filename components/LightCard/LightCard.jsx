@@ -11,10 +11,17 @@ import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
 
 import React from "react";
 import { COLOR, SIZES } from "../../constants/index";
+import { useNavigation } from "expo-router";
+
 export default function LightCard({ data, id }) {
+  const navigate = useNavigation();
+
+  const pressHandler = () => {
+    navigate.navigate("product", { data });
+  };
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.touch}>
+    <SafeAreaView key={id} style={styles.container}>
+      <TouchableOpacity onPress={pressHandler} style={styles.touch}>
         <Image style={styles.image} source={data.img} />
       </TouchableOpacity>
       <View style={styles.title}>

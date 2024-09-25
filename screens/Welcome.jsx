@@ -5,6 +5,8 @@ import ButtonComponent from "../components/ButtonsComponent/ButtonsComponent";
 import { useNavigation } from "@react-navigation/native";
 import WelcomeImageContainer from "../components/WelcomeImageContainer/WelcomeImageContainer";
 import WelcomeTextContainer from "../components/WelcomeTextContainer/WelcomeTextContainer";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+
 
 export default function Welcome() {
   const navigation = useNavigation();
@@ -31,7 +33,10 @@ export default function Welcome() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.mainText}>Lighthouse</Text>
+      <Text style={styles.mainText}>
+        Lighthouse{" "}
+        <MaterialCommunityIcons name="lighthouse" size={40} color="#fff" />
+      </Text>
       <WelcomeImageContainer />
       <WelcomeTextContainer />
       <Animated.View
@@ -42,7 +47,7 @@ export default function Welcome() {
               {
                 translateY: moveButtonAnimation.interpolate({
                   inputRange: [0, 1],
-                  outputRange: [0, 200],
+                  outputRange: [0, 250],
                 }),
               },
             ],
@@ -81,7 +86,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: "absolute",
-    bottom: SIZES.xLarge + 10,
+    bottom: SIZES.xLarge + 40,
     marginVertical: SIZES.xLarge,
   },
   buttons: {
