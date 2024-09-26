@@ -4,6 +4,7 @@ import { COLOR } from "../constants/index.js";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "expo-router";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import ProductDetails from "../components/ProductDetails/ProductDetails.jsx"
 
 export default function Product({ route }) {
   const [like, setLike] = useState(false);
@@ -31,6 +32,7 @@ export default function Product({ route }) {
           color={like ? COLOR.good : "#fff"}
         />
       </TouchableOpacity>
+      <ProductDetails data={data} />
     </View>
   );
 }
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
   },
   backPage: {
     position: "absolute",
-    top: 30,
+    top: 40,
     left: 20,
     padding: 10,
     backgroundColor: "#00000070",
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
   },
   likeItem: {
     position: "absolute",
-    top: 30,
+    top: 40,
     right: 20,
     padding: 10,
     backgroundColor: "#00000070",

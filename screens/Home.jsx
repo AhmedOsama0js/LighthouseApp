@@ -40,7 +40,15 @@ export default function Home() {
       </View>
       <View style={styles.flatList}>
         {notFound ? (
-          <Text style={{fontSize:30, textAlign:"center",color:COLOR.mainColor}}>Not Found Item</Text>
+          <Text
+            style={{
+              fontSize: 30,
+              textAlign: "center",
+              color: COLOR.mainColor,
+            }}
+          >
+            Not Found Item
+          </Text>
         ) : (
           <FlatList
             data={Items}
@@ -49,7 +57,8 @@ export default function Home() {
               <LightCard data={item} id={item.id.toString()} />
             )}
             initialNumToRender={10}
-            windowSize={5}
+            windowSize={2}
+            // numColumns={2}
             getItemLayout={(data, index) => ({
               length: 100,
               offset: 100 * index,
